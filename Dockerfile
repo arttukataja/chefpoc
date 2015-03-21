@@ -1,19 +1,27 @@
 FROM	ubuntu:14.04
 
 # base tools to run Chef scripts
-RUN apt-get update && apt-get install -y curl wget
+RUN apt-get update && apt-get install -y curl wget nano
 
 # install Chef-solo for running the scripts
 RUN cd ~ && curl -L https://www.opscode.com/chef/install.sh | bash
 
-##### clone git repository arttukataja/chefpoc.git 
+# mark location for host share (how to force this?)
+VOLUME /repo/chefpoc
+
+# create symbolic link for cookbooks
+RUN ln -s /repo/chefpoc/chef-repo /root/chef-repo
+
+#####
 #
-# (feel free to change the repo and update this section accordingly)
+# Run with:
 #
+# 	docker run -i -t -v /Users/<user>/chefpoc:/repo/chefpoc <id>
 #
-# RUN cd ~ && git clone https://github.com/arttukataja/chefpoc.git
-# RUN ln -s /root/chefpoc/chef-repo /root/chef-repo
+#	example:
 #
+#	docker run -i -t -v /Users/arttu/chefpoc:/repo/chefpoc fe474bf70842
+
 
 
 #####
@@ -28,4 +36,5 @@ RUN cd ~ && curl -L https://www.opscode.com/chef/install.sh | bash
 #	
 # we assume that symbolic link to ~/chef-repo will exist
 #	echo "cookbook_path [ '/root/chef-repo/cookbooks' ]" > chef-repo/.chef/knife.rb 
+
 
