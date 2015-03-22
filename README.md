@@ -17,18 +17,18 @@ Running
 
 docker build .
 
-2. Run your image 
+2. Run your image, note that you need to map host chefpoc to /repo/chefpoc
 
-docker run -i -t -v <your chefpoc location>:/repo/chefpoc <id>
-
-for an example:
+For an example:
 
 docker run -i -t -v /Users/arttu/chefpoc:/repo/chefpoc fe474bf70842
 
 3. Run chef-solo inside the docker and verify installed Java version
 
 cd ~/chef-repo
+
 chef-solo -c solo.rb -j pocapp.json
+
 java -version
 
 
