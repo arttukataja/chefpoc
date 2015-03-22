@@ -3,7 +3,14 @@
 
 Overview
 ========
-This PoC creates a new Ubuntu 14.04 with chef-solo support (done with a Dockerfile) and installs Oracle JDK 7 to it (done with chef-solo scripts) 
+
+PoC tools:
+- Docker & Dockerfile
+- Chef.io: ChefDK, chef-solo & Docker Supermarket
+
+PoC contents:
+1. create new Docker image for Ubuntu 14.04 + chef-solo
+2. install Oracle JDK 7 using chef-solo
 
 Host requirements for running: Docker installed
 
