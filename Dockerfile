@@ -12,6 +12,8 @@ VOLUME /repo/chefpoc
 # create symbolic link for cookbooks
 RUN ln -s /repo/chefpoc/chef-repo /root/chef-repo
 
+
+
 #####
 #
 # Run with:
@@ -21,6 +23,13 @@ RUN ln -s /repo/chefpoc/chef-repo /root/chef-repo
 #	example:
 #
 #	docker run -i -t -v /Users/arttu/chefpoc:/repo/chefpoc fe474bf70842
+
+
+#####
+#
+# chef tutorial 
+#
+# http://gettingstartedwithchef.com/first-steps-with-chef.html
 
 
 
