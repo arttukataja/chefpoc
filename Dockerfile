@@ -15,35 +15,10 @@ RUN ln -s /repo/chefpoc/chef-repo /root/chef-repo
 
 
 #####
+# 
+# Note when running: you must map chefpoc directory to guest /repo/chefpoc
 #
-# Run with:
-#
-# 	docker run -i -t -v /Users/<user>/chefpoc:/repo/chefpoc <id>
-#
-#	example:
+# Run example: 
 #
 #	docker run -i -t -v /Users/arttu/chefpoc:/repo/chefpoc fe474bf70842
-
-
-#####
-#
-# chef tutorial 
-#
-# http://gettingstartedwithchef.com/first-steps-with-chef.html
-
-
-
-#####
-# Commands for setting up the neat chef directory structure for a clean repo
-# 
-# 	cd ~/chefpoc
-#	wget http://github.com/opscode/chef-repo/tarball/master
-#	tar -zxf master
-#	mv chef-chef-repo* chef-repo
-#	rm master
-#	mkdir chef-repo/.chef
-#	
-# we assume that symbolic link to ~/chef-repo will exist
-#	echo "cookbook_path [ '/root/chef-repo/cookbooks' ]" > chef-repo/.chef/knife.rb 
-
 
