@@ -22,11 +22,12 @@ Running
   `docker run -i -t -v /Users/arttu/chefpoc:/repo/chefpoc fe474bf70842`
 
 3. Run chef-solo inside the docker and verify installed Java version
-
-  `cd ~/chef-repo`
-  `chef-solo -c solo.rb -j pocapp.json`
-  `java -version`
-
+  
+  ```
+  cd ~/chef-repo
+  chef-solo -c solo.rb -j pocapp.json
+  java -version
+  ```
 
 
 
